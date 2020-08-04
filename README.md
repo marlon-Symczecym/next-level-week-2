@@ -1,4 +1,4 @@
-# Next Level Week #2 - Rocketseat -
+# Next Level Week #2 - Rocketseat
 
 Projeto que está sendo desenvolvido na segunda Next Level Week produzido pela Rocketseat, e tendo como instrutor o Diego Fernandes.
 
