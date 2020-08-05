@@ -1,35 +1,58 @@
 import React from 'react';
 
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
+import api from '../../services/api';
 
 import './styles.css'
 
-function TeacherItem() {
+export interface Teacher {
+  id: number;
+  avatar: string;
+  name: string;
+  bio: string;
+  subject: string;
+  whatsapp: string;
+  cost: number;
+};
+
+interface TeacherItemProps {
+  teacher: Teacher;
+};
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
+
+  function createNewConnection() {
+    api.post('connections', {
+      user_id: teacher.id,
+    });
+  }
+
   return (
     <article className="teacher-item">
       <header>
-        <img src="https://avatars2.githubusercontent.com/u/40342789?s=460&u=365114884df7fc7f351990e798ffdc9f646a0da2&v=4" alt="Marlon Symczecym"/>
+        <img src={ teacher.avatar } alt={ teacher.name }/>
         <div>
-          <strong>Marlon Symczecym</strong>
-          <span>Programação</span>
+          <strong>{ teacher.name }</strong>
+          <span>{ teacher.subject }</span>
         </div>
       </header>
 
       <p>
-        Entusiasta das melhores tecnologias de qúimica avançada.
-        <br /><br />
-        Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas atraveś de experiências. Mais de 200 mil pessoas já passaram por pelo menos uma das minhas explosões.
+      { teacher.bio }
       </p>
 
       <footer>
         <p>
           Preço/hora
-          <strong>R$ 80,00</strong>
+          <strong>R$ { teacher.cost }</strong>
         </p>
-        <button type="button">
+        <a 
+          target="_blank" 
+          onClick={createNewConnection} 
+          href={`https://wa.me/${ teacher.whatsapp }`} >
           <img src={whatsappIcon} alt="whatsapp"/>
           Entrar em contato
-        </button>
+        </a>
       </footer>
     </article>
   )

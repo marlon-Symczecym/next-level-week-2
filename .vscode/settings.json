@@ -1,0 +1,10 @@
+{
+  "sqltools.connections": [
+    {
+      "database": "/home/marlondev/Desktop/cursos/rocketseat/nlw2/api/src/database/database.sqlite",
+      "driver": "SQLite",
+      "name": "nlw2",
+      "previewLimit": 50
+    }
+  ]
+}
