@@ -1,4 +1,4 @@
-# Next Level Week #2 - Rocketseat - PROFFY
+# Next Level Week #2 - Rocketseat - PROFFY - WEB
 
 ![Proffy](images/proffy.jpg)
 
